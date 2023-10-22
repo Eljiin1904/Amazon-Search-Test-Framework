@@ -1,4 +1,7 @@
-Create a new directory for your project:
+                                                            Amazon Search .JS test Framework
+
+
+Step 1: Create a new directory for your project
 
 mkdir amazon-search-test-framework
 
