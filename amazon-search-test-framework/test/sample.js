@@ -12,5 +12,6 @@ driver.get('https://www.google.com')
   })
   .catch(error => {
     console.error('Error occurred:', error);
+    console.log('Error Message Here.');
   })
   .finally(() => driver.quit());
