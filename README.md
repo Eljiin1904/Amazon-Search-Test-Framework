@@ -123,7 +123,7 @@ npm run generate-allure-report
 Open Allure report in the browser:
 npm run open-allure-report
 
-Additional Test Framework Functionality 
+Additional Test Framework Functionality: 
 -Headless Selenium Web Browser
 -Allure Reports - HTML reports
 -Mocha Test Runner
