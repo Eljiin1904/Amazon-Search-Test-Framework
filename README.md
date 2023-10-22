@@ -52,11 +52,6 @@ project-folder/
 
 │
 
-├── lib/
-
-│   ├── webdriver-helpers.js
-
-
 ├── allure-results/
     ├── allure-results files.js
 
@@ -77,10 +72,6 @@ test/: Directory containing your test scripts.
 amazon_search_test.js: A test script file that contains the test scenarios for the Amazon search functionality.
 
 other_test_files.js: Potentially, additional test scripts for other parts of your application or additional test cases.
-
-lib/: Directory for storing utility functions or helper functions used in your test scripts.
-
-webdriver-helpers.js: A file containing utility functions for interacting with Selenium WebDriver and web elements.
 
 allure-results/: A directory where Allure test results are generated.
 
