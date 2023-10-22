@@ -1,0 +1,24 @@
+{
+  "name": "amazon-search-test-framework",
+  "version": "1.0.0",
+  "description": "Js-mocha test framework for testing amazon search",
+  "main": "",
+  "scripts": {
+    "amazon-search": "mocha test/amazon-search.js --reporter mocha-allure-reporter",
+    "test": "mocha test/*.js --reporter mocha-allure-reporter",
+    "test-order": "",
+    "generate-allure-report": "npx allure generate reports --clean",
+    "open-allure-report": "npx allure open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "allure-commandline": "^2.24.1",
+    "assert": "^2.1.0",
+    "chromedriver": "^118.0.5993.70",
+    "mocha": "^10.2.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "selenium-webdriver": "^4.14.0"
+  }
+}

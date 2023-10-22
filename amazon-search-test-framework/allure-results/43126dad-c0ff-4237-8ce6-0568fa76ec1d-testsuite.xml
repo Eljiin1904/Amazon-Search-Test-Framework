@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1697926250262' stop='1697926262004'>
+    <name>Amazon Search Test</name>
+    <title>Amazon Search Test</title>
+    <test-cases>
+        <test-case start='1697926253985' status='broken' stop='1697926255992'>
+            <name>should open the Amazon website</name>
+            <title>should open the Amazon website</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\cozycorner\eclipse-workspace\amazon-search-test-framework\test\amazon-search.js)</message>
+                <stack-trace>Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\cozycorner\eclipse-workspace\amazon-search-test-framework\test\amazon-search.js)
+                    at listOnTimeout (node:internal/timers:569:17)
+                    at process.processTimers (node:internal/timers:512:7)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1697926255993' status='broken' stop='1697926257996'>
+            <name>should search for a product</name>
+            <title>should search for a product</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\cozycorner\eclipse-workspace\amazon-search-test-framework\test\amazon-search.js)</message>
+                <stack-trace>Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\cozycorner\eclipse-workspace\amazon-search-test-framework\test\amazon-search.js)
+                    at listOnTimeout (node:internal/timers:569:17)
+                    at process.processTimers (node:internal/timers:512:7)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1697926257997' status='broken' stop='1697926262003'>
+            <name>should filter products by price</name>
+            <title>should filter products by price</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\cozycorner\eclipse-workspace\amazon-search-test-framework\test\amazon-search.js)</message>
+                <stack-trace>Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\cozycorner\eclipse-workspace\amazon-search-test-framework\test\amazon-search.js)
+                    at listOnTimeout (node:internal/timers:569:17)
+                    at process.processTimers (node:internal/timers:512:7)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

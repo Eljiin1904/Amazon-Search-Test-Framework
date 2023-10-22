@@ -1,0 +1,47 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1697936085491' stop='1697936105483'>
+    <name>Amazon Search Test</name>
+    <title>Amazon Search Test</title>
+    <test-cases>
+        <test-case start='1697936091799' status='passed' stop='1697936103133'>
+            <name>should open the Amazon website</name>
+            <title>should open the Amazon website</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1697936103135' status='passed' stop='1697936103502'>
+            <name>should search for a product</name>
+            <title>should search for a product</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1697936103505' status='passed' stop='1697936103828'>
+            <name>should filter products by price</name>
+            <title>should filter products by price</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1697936103834' status='passed' stop='1697936104530'>
+            <name>should navigate to the last page of results</name>
+            <title>should navigate to the last page of results</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1697936104530' status='passed' stop='1697936104539'>
+            <name>should retrieve information from the penultimate item</name>
+            <title>should retrieve information from the penultimate item</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

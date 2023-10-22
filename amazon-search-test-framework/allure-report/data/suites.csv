@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Oct 21 20:55:43 EDT 2023","Sat Oct 21 20:55:55 EDT 2023","11736","","Amazon Search Test","","Amazon Search Test","should open the Amazon website","should open the Amazon website",""
+"broken","Sat Oct 21 15:02:36 EDT 2023","Sat Oct 21 15:02:36 EDT 2023","0","","Amazon Search Test","","Amazon Search Test","""before all"" hook for ""should validate the search functionality""","""before all"" hook for ""should validate the search functionality""",""
+"passed","Sat Oct 21 20:55:55 EDT 2023","Sat Oct 21 20:55:55 EDT 2023","4","","Amazon Search Test","","Amazon Search Test","should search for a product","should search for a product",""
+"passed","Sat Oct 21 20:55:55 EDT 2023","Sat Oct 21 20:55:55 EDT 2023","3","","Amazon Search Test","","Amazon Search Test","should navigate to the last page of results","should navigate to the last page of results",""
+"passed","Sat Oct 21 20:55:55 EDT 2023","Sat Oct 21 20:55:55 EDT 2023","5","","Amazon Search Test","","Amazon Search Test","should filter products by price","should filter products by price",""
+"passed","Sat Oct 21 20:55:55 EDT 2023","Sat Oct 21 20:55:55 EDT 2023","3","","Amazon Search Test","","Amazon Search Test","should retrieve information from the penultimate item","should retrieve information from the penultimate item",""
