@@ -1,4 +1,4 @@
-                                                            Amazon Search .JS test Framework
+                                                       Amazon Search .JS test Framework
 
 
 Step 1: Create a new directory for your project
