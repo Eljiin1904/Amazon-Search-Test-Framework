@@ -37,8 +37,8 @@ describe('Amazon Search Test', function () {
     }
   });
 
-  // Test searching for a product
-  it('should search for a product', async function () {
+  // Test searching for a laptop
+  it('should search for a laptop', async function () {
     this.timeout(20000);
     try {
       // Logging for test start
