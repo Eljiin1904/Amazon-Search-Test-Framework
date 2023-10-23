@@ -9,7 +9,7 @@ describe('Amazon Search Test', function () {
   // Set up the test environment
   before(async function () {
     // Timeout variable
-    this.timeout(60000);
+    this.timeout(10000);
 
     // Create a new WebDriver instance with Chrome in headless mode
     driver = await new Builder()
@@ -20,7 +20,7 @@ describe('Amazon Search Test', function () {
 
   // Test opening Amazon website
   it('should open the Amazon website', async function () {
-    this.timeout(60000);
+    this.timeout(10000);
     try {
       // Logging for test start
       console.log('Starting the test: should open the Amazon website');
@@ -44,7 +44,7 @@ describe('Amazon Search Test', function () {
       // Logging for test start
       console.log('Starting the test: should search for a product');
 
-      // Your test steps for searching for a product
+      // Test steps for searching for a product
 
       // Log success
       console.log('Product search completed successfully');
@@ -62,7 +62,7 @@ describe('Amazon Search Test', function () {
       // Logging for test start
       console.log('Starting the test: should filter products by price');
 
-      // Your test steps for filtering products by price
+      // Test steps for filtering products by price
 
       // Log success
       console.log('Filtering products by price completed successfully');
@@ -75,7 +75,7 @@ describe('Amazon Search Test', function () {
 
   // Test navigating to the last page
   it('should navigate to the last page of results', async function () {
-    this.timeout(20000);
+    this.timeout(10000);
     try {
       // Logging for test start
       console.log('Starting the test: should navigate to the last page of results');
@@ -93,7 +93,7 @@ describe('Amazon Search Test', function () {
 
   // Test getting information from the penultimate item
   it('should retrieve information from the penultimate item', async function () {
-    this.timeout(20000);
+    this.timeout(10000);
     try {
       // Logging for test start
       console.log('Starting the test: should retrieve information from the penultimate item');
