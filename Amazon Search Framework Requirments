@@ -1,0 +1,19 @@
+
+
+Amazon Search Framework Requirments 
+
+Test task ProPartner QA Automation
+Technology: NodeJS, Selenium Web driver
+Implement automated test scenario using mentioned technology stack that validates search functionality of the Amazon web-store.
+1. Open Google Chrome browser
+2. Go to https://www.amazon.com
+3. Input “laptop” to the search box
+4. Run search
+5. Filter items by price using quick filter “$500-600”
+6. Run search
+7. Go to the last page
+8. Log to console title and price of the penultimate item
+ 
+Write the code so that it is self-sufficient and can be run on any machine.
+Add comments to the code explaining the basic steps and actions.
+Instructions for installing and running the test should be included in the comments.
