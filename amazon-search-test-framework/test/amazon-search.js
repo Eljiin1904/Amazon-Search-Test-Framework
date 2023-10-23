@@ -11,13 +11,16 @@ describe('Amazon Search Test', function () {
     // Timeout variable
     this.timeout(60000);
 
-    // Create a new WebDriver instance with Chrome in headless mode
+    
+   // Create a new WebDriver instance with Chrome in headless mode
     driver = await new Builder()
       .forBrowser('chrome')
+     // Remove this string to remove headless browser option  
+      .setChromeOptions(new chrome.Options().headless())
       .build();
   });
 
-  // Test opening Amazon website
+    // Test opening Amazon website
   it('should open the Amazon website', async function () {
     this.timeout(60000);
     try {
@@ -58,7 +61,7 @@ describe('Amazon Search Test', function () {
 
   // Test filtering products by price
   it('should filter products by price', async function () {
-    this.timeout(80000);
+    this.timeout(60000);
     try {
       // Logging for test start
       console.log('Starting the test: should filter products by price');
