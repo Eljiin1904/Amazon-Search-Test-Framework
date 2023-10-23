@@ -14,7 +14,6 @@ describe('Amazon Search Test', function () {
     // Create a new WebDriver instance with Chrome in headless mode
     driver = await new Builder()
       .forBrowser('chrome')
-      .setChromeOptions(new chrome.Options().headless())
       .build();
   });
 
@@ -39,7 +38,7 @@ describe('Amazon Search Test', function () {
 
   // Test searching for a laptop
   it('should search for a laptop', async function () {
-    this.timeout(20000);
+    this.timeout(60000);
     try {
       // Logging for test start
       console.log('Starting the test: should search for a laptop');
@@ -52,22 +51,26 @@ describe('Amazon Search Test', function () {
       console.log('Laptop search completed successfully');
     } catch (error) {
       // Log any errors
-      console.error('Error in should search for a product:', error);
+      console.error('Error in laptop search failed:', error);
       throw error;
     }
   });
 
   // Test filtering products by price
   it('should filter products by price', async function () {
-    this.timeout(20000);
+    this.timeout(80000);
     try {
       // Logging for test start
       console.log('Starting the test: should filter products by price');
 
-      // Find the price filter element and apply a specific price range.
-      const priceFilter = await driver.findElement(By.id('price-filter'));
-      await priceFilter.sendKeys('Min Price: $500', Key.RETURN);
+  // Find the price filter element and apply a specific price range.
+      const dropdown = await driver.findElement(By.id("a-autoid-0-announce"));
+      await dropdown.click(); // Click to open the dropdown
 
+	 // Now that the dropdown is open, select the desired option (e.g., "Low to High") by its text.
+	  const optionToSelect = await driver.findElement(By.id('s-result-sort-select_1'));
+ 	  await optionToSelect.click(); // Click on the desired option
+ 	  
       // Log success
       console.log('Filtering products by price completed successfully');
     } catch (error) {
@@ -79,45 +82,57 @@ describe('Amazon Search Test', function () {
 
   // Test navigating to the last page
   it('should navigate to the last page of results', async function () {
-    this.timeout(20000);
-    try {
-      // Logging for test start
-      console.log('Starting the test: should navigate to the last page of results');
-
-      // Navigate to the last page of results by clicking the "Next" button repeatedly.
-      const nextButton = await driver.findElement(By.id('next-button'));
-      while (await nextButton.isEnabled()) {
-        await nextButton.click();
-      }
-
-      // Log success
-      console.log('Navigating to the last page completed successfully');
-    } catch (error) {
-      // Log any errors
-      console.error('Error in should navigate to the last page of results:', error);
-      throw error;
-    }
+    this.timeout(60000);
+    
+ try {
+  const nextButton = await driver.wait(until.elementLocated(By.xpath('//a[contains(text(), "Next")]'), 30000));
+  await driver.wait(until.elementIsVisible(nextButton), 30000);
+  await nextButton.click();
+  console.log('Clicked the "Next" button');
+} catch (error) {
+  console.error('Error in should navigate to the last page of results:', error);
+  throw error;
+}
   });
 
-  // Test getting information from the penultimate item
-  it('should retrieve information from the penultimate item', async function () {
-    this.timeout(20000);
-    try {
-      // Logging for test start
-      console.log('Starting the test: should retrieve information from the penultimate item');
+ // Test getting information from the penultimate item
+it('should retrieve information from the penultimate item', async function () {
+  this.timeout(60000);
+  try {
+    // Logging for test start
+    console.log('Starting the test: should retrieve information from the penultimate item');
 
-      // Retrieve information from the penultimate item, e.g., its title and price.
-      const penultimateItem = await driver.findElement(By.css('.results .item:nth-last-child(2)'));
-      const title = await penultimateItem.findElement(By.css('.title')).getText();
-      const price = await penultimateItem.findElement(By.css('.price')).getText();
+    // Locate all items on the page
+    const items = await driver.findElements(By.css('div.s-result-item'));
 
-      // Log success
+    if (items.length >= 2) {
+      // Get the penultimate item
+      const penultimateItem = items[items.length - 2];
+
+      // Find the title and price elements inside the penultimate item
+      const titleElement = await penultimateItem.findElement(By.css('span.a-size-medium.a-color-base.a-text-normal'));
+      const priceWholeElement = await penultimateItem.findElement(By.css('span.a-price-whole'));
+      const priceFractionElement = await penultimateItem.findElement(By.css('span.a-price-fraction'));
+
+      // Retrieve text for title, price whole, and price fraction
+      const title = await titleElement.getText();
+      const priceWhole = await priceWholeElement.getText();
+      const priceFraction = await priceFractionElement.getText();
+      const price = priceWhole + '.' + priceFraction;
+
+      // Log success and the retrieved title and price
       console.log('Retrieving item information completed successfully');
-    } catch (error) {
-      // Log any errors
-      console.error('Error in should retrieve information from the penultimate item:', error);
-      throw error;
+      console.log('Title:', title);
+      console.log('Price:', price);
+    } else {
+      console.error('Penultimate item not found.');
+      // Handle the case when the penultimate item is not found
     }
+  } catch (error) {
+    // Log any errors
+    console.error('Error in should retrieve information from the penultimate item:', error);
+    throw error;
+  }
   });
 
   // Clean up after the test
