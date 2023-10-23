@@ -9,7 +9,7 @@ describe('Amazon Search Test', function () {
   // Set up the test environment
   before(async function () {
     // Timeout variable
-    this.timeout(10000);
+    this.timeout(60000);
 
     // Create a new WebDriver instance with Chrome in headless mode
     driver = await new Builder()
@@ -20,7 +20,7 @@ describe('Amazon Search Test', function () {
 
   // Test opening Amazon website
   it('should open the Amazon website', async function () {
-    this.timeout(10000);
+    this.timeout(60000);
     try {
       // Logging for test start
       console.log('Starting the test: should open the Amazon website');
@@ -42,12 +42,14 @@ describe('Amazon Search Test', function () {
     this.timeout(20000);
     try {
       // Logging for test start
-      console.log('Starting the test: should search for a product');
+      console.log('Starting the test: should search for a laptop');
 
-      // Test steps for searching for a product
+      // Locate the search input element, enter a search query, and submit the search.
+      const searchInput = await driver.findElement(By.id('twotabsearchtextbox'));
+      await searchInput.sendKeys('laptop', Key.RETURN);
 
       // Log success
-      console.log('Product search completed successfully');
+      console.log('Laptop search completed successfully');
     } catch (error) {
       // Log any errors
       console.error('Error in should search for a product:', error);
@@ -62,7 +64,9 @@ describe('Amazon Search Test', function () {
       // Logging for test start
       console.log('Starting the test: should filter products by price');
 
-      // Test steps for filtering products by price
+      // Find the price filter element and apply a specific price range.
+      const priceFilter = await driver.findElement(By.id('price-filter'));
+      await priceFilter.sendKeys('Min Price: $500', Key.RETURN);
 
       // Log success
       console.log('Filtering products by price completed successfully');
@@ -75,12 +79,16 @@ describe('Amazon Search Test', function () {
 
   // Test navigating to the last page
   it('should navigate to the last page of results', async function () {
-    this.timeout(10000);
+    this.timeout(20000);
     try {
       // Logging for test start
       console.log('Starting the test: should navigate to the last page of results');
 
-      // Your test steps for navigating to the last page
+      // Navigate to the last page of results by clicking the "Next" button repeatedly.
+      const nextButton = await driver.findElement(By.id('next-button'));
+      while (await nextButton.isEnabled()) {
+        await nextButton.click();
+      }
 
       // Log success
       console.log('Navigating to the last page completed successfully');
@@ -93,12 +101,15 @@ describe('Amazon Search Test', function () {
 
   // Test getting information from the penultimate item
   it('should retrieve information from the penultimate item', async function () {
-    this.timeout(10000);
+    this.timeout(20000);
     try {
       // Logging for test start
       console.log('Starting the test: should retrieve information from the penultimate item');
 
-      // Your test steps for retrieving item information
+      // Retrieve information from the penultimate item, e.g., its title and price.
+      const penultimateItem = await driver.findElement(By.css('.results .item:nth-last-child(2)'));
+      const title = await penultimateItem.findElement(By.css('.title')).getText();
+      const price = await penultimateItem.findElement(By.css('.price')).getText();
 
       // Log success
       console.log('Retrieving item information completed successfully');
