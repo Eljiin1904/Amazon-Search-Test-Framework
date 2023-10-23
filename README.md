@@ -1,5 +1,8 @@
-                                                       Amazon Search .JS test Framework
+                                                       
 
+Amazon Test Framework
+
+Steps for framework install:
 
 Step 1: Create a new directory for your project
 
