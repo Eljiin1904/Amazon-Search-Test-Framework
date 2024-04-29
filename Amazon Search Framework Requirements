@@ -2,8 +2,7 @@
 
 Amazon Search Framework Requirements 
 
-Test task ProPartner QA Automation
-Technology: NodeJS, Selenium Web driver
+Technology: NodeJS, .js, Selenium Web driver, Mocha, Cucumber, Allure-Reports
 Implement automated test scenario using mentioned technology stack that validates search functionality of the Amazon web-store.
 1. Open Google Chrome browser
 2. Go to https://www.amazon.com
